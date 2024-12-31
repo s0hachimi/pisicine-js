@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">--Superhero Database--</h1>
+    </header>
+    <main class="container">
+            <!-- Search Bar -->
+            <input type="text" id="search" placeholder="Search by name..." />
+            <!-- Size Selector -->
+            <label for="pageSize">Page size:</label>
+            <select id="pageSize">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="all">All</option>
+            </select>
+            <!-- Superhero Table -->
+             <div class="flip table">
+                <table class="flip">
+                    <thead>
+                        <tr>
+                            <th id="icon" rowspan="2">Icon</th>
+                            <th id="name" rowspan="2" class="sortable" data-column="name">Name</th>
+                            <th id="fullName" rowspan="2" class="sortable" data-column="fullName">Full Name</th>
+                            <th id="powerStats" colspan="6">Power Stats</th>
+                            <th id="race" rowspan="2" class="sortable" data-column="race">Race</th>
+                            <th id="gender" rowspan="2" class="sortable" data-column="gender">Gender</th>
+                            <th id="height" rowspan="2" class="sortable" data-column="height">Height</th>
+                            <th id="weight" rowspan="2" class="sortable" data-column="weight">Weight</th>
+                            <th id="placeOfBirth" rowspan="2" class="sortable" data-column="placeOfBirth">Place of Birth</th>
+                            <th id="alignment" rowspan="2" class="sortable" data-column="alignment">Alignment</th>
+                        </tr>
+                        <tr>
+                            <th id="intelligence" class="sortable" data-column="intelligence">Intelligence</th>
+                            <th id="strength" class="sortable" data-column="strength">Strength</th>
+                            <th id="speed" class="sortable" data-column="speed">Speed</th>
+                            <th id="durability" class="sortable" data-column="durability">Durability</th>
+                            <th id="power" class="sortable" data-column="power">Power</th>
+                            <th id="combat" class="sortable" data-column="combat">Combat</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="tableBody">
+                        <!-- Superhero data will be dynamically injected here via JavaScript -->
+                    </tbody>
+                </table>
+             </div>
+             <!-- Pagination controls (not implemented) -->
+             <div id="pagination">
+                <button id="prevPage">Previous</button>
+                <span id="pageInfo"></span>
+                <button id="nextPage">Next</button>
+            </div>
+            
+    </main>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
